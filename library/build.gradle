@@ -50,10 +50,10 @@ android {
 android.libraryVariants
 publishing {
     publications {
-        maven(MavenPublication) {
-            artifact "build/libs/SmartLocation-${version}.aar"
-            artifactId 'library'
-        }
+//        maven(MavenPublication) {
+//            artifact "build/libs/SmartLocation-${version}.aar"
+//            artifactId 'library'
+//        }
     }
 }
 
