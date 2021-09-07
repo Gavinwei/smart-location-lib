@@ -28,7 +28,6 @@ import io.nlopez.smartlocation.geocoding.GeocodingUpdatedListener;
 import io.nlopez.smartlocation.geocoding.ReverseGeocodingUpdatedListener;
 import io.nlopez.smartlocation.geocoding.common.LocationAddress;
 import io.nlopez.smartlocation.geocoding.providers.android.AndroidGeocodingProviderFactory;
-import io.nlopez.smartlocation.geocoding.providers.googlemaps.GoogleMapsApiGeocodingProviderFactory;
 import io.nlopez.smartlocation.location.LocationController;
 import io.nlopez.smartlocation.location.LocationUpdatedListener;
 import io.nlopez.smartlocation.location.config.LocationProviderParams;
@@ -60,28 +59,28 @@ public class GeocodingFragment extends Fragment {
     private final View.OnClickListener mDirectSearchClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            SmartLocation.with(requireContext())
-                    .geocoding(new AndroidGeocodingProviderFactory(), new GoogleMapsApiGeocodingProviderFactory(GOOGLE_MAPS_API_KEY))
-                    .findLocationByName(
-                            mDirectEditText.getText().toString(),
-                            new GeocodingUpdatedListener.SimpleGeocodingUpdatedListener() {
-                                @Override
-                                public void onLocationResolved(String name, List<LocationAddress> results) {
-                                    if (results.isEmpty()) {
-                                        mDirectResultText.setText("None found");
-                                    } else {
-                                        LocationAddress address = results.get(0);
-                                        mDirectResultText.setText(address.getLocation().toString());
-                                    }
-                                }
-
-                                @Override
-                                public void onAllProvidersFailed() {
-                                    mDirectResultText.setText("All providers failed");
-                                }
-
-                            });
-            mDirectResultText.setText("Searching...");
+//            SmartLocation.with(requireContext())
+//                    .geocoding(new AndroidGeocodingProviderFactory(), new GoogleMapsApiGeocodingProviderFactory(GOOGLE_MAPS_API_KEY))
+//                    .findLocationByName(
+//                            mDirectEditText.getText().toString(),
+//                            new GeocodingUpdatedListener.SimpleGeocodingUpdatedListener() {
+//                                @Override
+//                                public void onLocationResolved(String name, List<LocationAddress> results) {
+//                                    if (results.isEmpty()) {
+//                                        mDirectResultText.setText("None found");
+//                                    } else {
+//                                        LocationAddress address = results.get(0);
+//                                        mDirectResultText.setText(address.getLocation().toString());
+//                                    }
+//                                }
+//
+//                                @Override
+//                                public void onAllProvidersFailed() {
+//                                    mDirectResultText.setText("All providers failed");
+//                                }
+//
+//                            });
+//            mDirectResultText.setText("Searching...");
         }
     };
 
@@ -115,25 +114,25 @@ public class GeocodingFragment extends Fragment {
             location.setLongitude(longitude);
 
             // Inverse geocoding retrieval
-            SmartLocation.with(requireContext())
-                    .geocoding(new AndroidGeocodingProviderFactory(), new GoogleMapsApiGeocodingProviderFactory(GOOGLE_MAPS_API_KEY))
-                    .findNameByLocation(location, new ReverseGeocodingUpdatedListener.SimpleReverseGeocodingUpdatedListener() {
-                        @Override
-                        public void onAddressResolved(Location original, List<LocationAddress> results) {
-                            if (results.isEmpty()) {
-                                mInverseResultText.setText("None found");
-                            } else {
-                                final LocationAddress address = results.get(0);
-                                mInverseResultText.setText(address.getFormattedAddress());
-                            }
-                        }
-
-                        @Override
-                        public void onAllProvidersFailed() {
-                            mInverseResultText.setText("All providers failed");
-                        }
-                    });
-            mInverseResultText.setText("Searching...");
+//            SmartLocation.with(requireContext())
+//                    .geocoding(new AndroidGeocodingProviderFactory(), new GoogleMapsApiGeocodingProviderFactory(GOOGLE_MAPS_API_KEY))
+//                    .findNameByLocation(location, new ReverseGeocodingUpdatedListener.SimpleReverseGeocodingUpdatedListener() {
+//                        @Override
+//                        public void onAddressResolved(Location original, List<LocationAddress> results) {
+//                            if (results.isEmpty()) {
+//                                mInverseResultText.setText("None found");
+//                            } else {
+//                                final LocationAddress address = results.get(0);
+//                                mInverseResultText.setText(address.getFormattedAddress());
+//                            }
+//                        }
+//
+//                        @Override
+//                        public void onAllProvidersFailed() {
+//                            mInverseResultText.setText("All providers failed");
+//                        }
+//                    });
+//            mInverseResultText.setText("Searching...");
         }
     };
 
