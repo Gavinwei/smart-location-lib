@@ -12,7 +12,6 @@ dependencies {
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
         google()
-        jcenter()
     }
     implementation project(':library')
     implementation 'io.reactivex.rxjava2:rxjava:2.2.20'
@@ -45,10 +44,10 @@ android {
 android.libraryVariants
 publishing {
     publications {
-        maven(MavenPublication) {
-            artifact "build/libs/SmartLocation-RxJavaExtension-${version}.aar"
-            artifactId 'rx'
-        }
+//        maven(MavenPublication) {
+//            artifact "build/libs/SmartLocation-RxJavaExtension-${version}.aar"
+//            artifactId 'rx'
+//        }
     }
 }
 
