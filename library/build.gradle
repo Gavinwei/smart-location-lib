@@ -12,10 +12,9 @@ dependencies {
         google()
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
-        jcenter()
     }
-    implementation 'com.google.android.gms:play-services-location:17.1.0'
-    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'androidx.annotation:annotation:1.2.0'
     implementation 'org.jetbrains:annotations:20.1.0'
 
     // Permissions
@@ -50,10 +49,10 @@ android {
 android.libraryVariants
 publishing {
     publications {
-//        maven(MavenPublication) {
-//            artifact "build/libs/SmartLocation-${version}.aar"
-//            artifactId 'library'
-//        }
+        maven(MavenPublication) {
+            groupId 'io.nlopez.smartlocation'
+            artifactId 'library'
+        }
     }
 }
 
