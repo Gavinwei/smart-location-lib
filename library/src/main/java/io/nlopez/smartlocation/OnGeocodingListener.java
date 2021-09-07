@@ -2,11 +2,8 @@ package io.nlopez.smartlocation;
 
 import java.util.List;
 
-import io.nlopez.smartlocation.geocoding.utils.LocationAddress;
+import io.nlopez.smartlocation.geocoding.common.LocationAddress;
 
-/**
- * Created by mrm on 4/1/15.
- */
 public interface OnGeocodingListener {
     void onLocationResolved(String name, List<LocationAddress> results);
 }
