@@ -15,6 +15,8 @@ import android.widget.TextView;
 import io.nlopez.smartlocation.SmartLocation;
 import io.nlopez.smartlocation.location.LocationController;
 import io.nlopez.smartlocation.location.LocationUpdatedListener;
+import io.nlopez.smartlocation.location.config.LocationAccuracy;
+import io.nlopez.smartlocation.location.config.LocationProviderParams;
 import io.nlopez.smartlocation.location.providers.playservices.GooglePlayServicesLocationSettingsManager;
 
 public class LocationFragment extends Fragment {
@@ -27,6 +29,8 @@ public class LocationFragment extends Fragment {
         public void onClick(View v) {
             mController = SmartLocation.with(requireContext())
                     .location()
+                    .config(new LocationProviderParams.Builder().accuracy(LocationAccuracy.HIGH).build())
+                    .timeout(3000)
                     .start(mLocationUpdated);
             updateUi(true);
             mText.setText("Searching location...");

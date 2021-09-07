@@ -39,5 +39,5 @@ before_script:
 
 
 script:
-    - cp gradle.properties.example gradle.properties
+    - cp gradle.properties gradle.properties
     - ./gradlew clean assembleDebug testDebug

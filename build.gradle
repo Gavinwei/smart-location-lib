@@ -4,8 +4,8 @@ buildscript {
     ext.smartLocationVersion = "4.0.0-SNAPSHOT"
 
     ext.slMinSdkVersion = 14
-    ext.slCompileSdkVersion = 30
-    ext.slTargetSdkVersion = 30
+    ext.slCompileSdkVersion = 29
+    ext.slTargetSdkVersion = 29
     ext.slBuildToolsVersion = "30.0.0"
 
     // Common dependencies
@@ -21,6 +21,6 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.0-alpha16'
+        classpath 'com.android.tools.build:gradle:4.2.2'
     }
 }
