@@ -4,7 +4,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import org.jetbrains.annotations.NotNull;
 
 import io.nlopez.smartlocation.utils.Nulls;
 
@@ -19,7 +18,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public @NotNull Fragment getItem(int position) {
+    public Fragment getItem(int position) {
         switch (position) {
             case 0:
                 mLocationFragment = Nulls.orDefault(mLocationFragment, new LocationFragment());
